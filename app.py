@@ -20,7 +20,7 @@ def index_post():
 
 @app.errorhandler(404)
 def notfound():
-    return render_template("index.html")
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     app.run(debug = True)
