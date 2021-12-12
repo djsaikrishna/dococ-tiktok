@@ -18,5 +18,9 @@ def index_post():
         return render_template("err.html")
     return render_template("success.html", image=tiktok.image(), standar=tiktok.standard(), hd=tiktok.hd(), name=tiktok.user())
 
+@app.errorhandler(404)
+def notfound():
+    return render_template("index.html")
+
 if __name__ == "__main__":
     app.run(debug = True)
